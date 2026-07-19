@@ -6,9 +6,9 @@ using UnityEngine.Windows;
 
 
 [DefaultExecutionOrder(-1)]
-public class GameInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
-    public static GameInput Instance { get; private set; }
+    public static PlayerInput Instance { get; private set; }
 
     public event Action OnInteractAction;
     public event Action OnDropAction;
@@ -57,7 +57,7 @@ public class GameInput : MonoBehaviour
             OnInteractAction?.Invoke();
         }
     }
-
+    
     public Vector2 GetMovementVectorNormalized()
     {
         Vector2 inputVector = myInput.Player.Move.ReadValue<Vector2>();
