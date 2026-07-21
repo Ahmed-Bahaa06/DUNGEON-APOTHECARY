@@ -118,6 +118,24 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectLeftItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""816d981b-1a8a-4564-a4d1-0590cc4de341"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectRightItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""28b41699-ad82-4823-b939-aaa81e0132a1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -285,6 +303,50 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b410bce6-9634-4f9a-9a9c-e85d678692e6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeftItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61fd18ba-8201-476c-9e59-3be7392d253e"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeftItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02fa3357-2f0c-4a92-aeae-7a27c08cead5"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRightItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""331fd134-711f-4003-a8a0-96b0c9747265"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRightItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -296,6 +358,8 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
+        m_Player_SelectLeftItem = m_Player.FindAction("SelectLeftItem", throwIfNotFound: true);
+        m_Player_SelectRightItem = m_Player.FindAction("SelectRightItem", throwIfNotFound: true);
     }
 
     ~@MyInputActions()
@@ -379,6 +443,8 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Drop;
+    private readonly InputAction m_Player_SelectLeftItem;
+    private readonly InputAction m_Player_SelectRightItem;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -402,6 +468,14 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Drop".
         /// </summary>
         public InputAction @Drop => m_Wrapper.m_Player_Drop;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectLeftItem".
+        /// </summary>
+        public InputAction @SelectLeftItem => m_Wrapper.m_Player_SelectLeftItem;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectRightItem".
+        /// </summary>
+        public InputAction @SelectRightItem => m_Wrapper.m_Player_SelectRightItem;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -437,6 +511,12 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
             @Drop.started += instance.OnDrop;
             @Drop.performed += instance.OnDrop;
             @Drop.canceled += instance.OnDrop;
+            @SelectLeftItem.started += instance.OnSelectLeftItem;
+            @SelectLeftItem.performed += instance.OnSelectLeftItem;
+            @SelectLeftItem.canceled += instance.OnSelectLeftItem;
+            @SelectRightItem.started += instance.OnSelectRightItem;
+            @SelectRightItem.performed += instance.OnSelectRightItem;
+            @SelectRightItem.canceled += instance.OnSelectRightItem;
         }
 
         /// <summary>
@@ -457,6 +537,12 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
             @Drop.started -= instance.OnDrop;
             @Drop.performed -= instance.OnDrop;
             @Drop.canceled -= instance.OnDrop;
+            @SelectLeftItem.started -= instance.OnSelectLeftItem;
+            @SelectLeftItem.performed -= instance.OnSelectLeftItem;
+            @SelectLeftItem.canceled -= instance.OnSelectLeftItem;
+            @SelectRightItem.started -= instance.OnSelectRightItem;
+            @SelectRightItem.performed -= instance.OnSelectRightItem;
+            @SelectRightItem.canceled -= instance.OnSelectRightItem;
         }
 
         /// <summary>
@@ -518,5 +604,19 @@ public partial class @MyInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDrop(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectLeftItem" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectLeftItem(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectRightItem" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectRightItem(InputAction.CallbackContext context);
     }
 }

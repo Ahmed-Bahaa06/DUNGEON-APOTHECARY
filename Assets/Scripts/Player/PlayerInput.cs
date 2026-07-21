@@ -5,13 +5,15 @@ using UnityEngine.Windows;
 
 
 
-[DefaultExecutionOrder(-1)]
+[DefaultExecutionOrder(-100)]
 public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput Instance { get; private set; }
 
     public event Action OnInteractAction;
     public event Action OnDropAction;
+    public event Action OnSelectLeftItemAction;
+    public event Action OnSelectRightItemAction;
 
     private MyInputActions myInput;
 
@@ -31,6 +33,8 @@ public class PlayerInput : MonoBehaviour
 
         myInput.Player.Interact.performed += Interact_performed;
         myInput.Player.Drop.performed += Drop_performed;
+        myInput.Player.SelectLeftItem.performed += SelectLeftItem_performed;
+        myInput.Player.SelectRightItem.performed += SelectRightItem_performed;
     }
 
 
@@ -38,7 +42,9 @@ public class PlayerInput : MonoBehaviour
     {
 
         myInput.Player.Interact.performed -= Interact_performed;
-        myInput.Player.Interact.performed -= Drop_performed;
+        myInput.Player.Drop.performed -= Drop_performed;
+        myInput.Player.SelectLeftItem.performed -= SelectLeftItem_performed;
+        myInput.Player.SelectRightItem.performed -= SelectRightItem_performed;
 
         myInput.Disable();
     }
@@ -52,9 +58,26 @@ public class PlayerInput : MonoBehaviour
     }
     private void Interact_performed(InputAction.CallbackContext obj)
     {
+
         if (obj.performed)
         {
             OnInteractAction?.Invoke();
+        }
+    }
+    private void SelectLeftItem_performed(InputAction.CallbackContext obj)
+    {
+        if (obj.performed)
+        {
+            OnSelectLeftItemAction?.Invoke();
+        }
+
+    }
+
+    private void SelectRightItem_performed(InputAction.CallbackContext obj)
+    {
+        if (obj.performed)
+        {
+            OnSelectRightItemAction?.Invoke();
         }
     }
     
