@@ -5,10 +5,11 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] private Image[] slotImages;
-    [SerializeField] private RectTransform selectionArrow;
+    [SerializeField] private GameObject leftSelectionArrow;
+    [SerializeField] private GameObject rightSelectionArrow;
 
-    private float arrowPositionX = 1.5f;
-    private float arrowRotationZ = 90f;
+    //private float arrowPositionX = 1.5f;
+    //private float arrowRotationZ = 90f;
 
     private void OnEnable()
     {
@@ -41,13 +42,13 @@ public class InventoryUI : MonoBehaviour
     {
         if (PlayerInventory.Instance.GetSelectedSlot() == 0)
         {
-            selectionArrow.anchoredPosition = new Vector2(-arrowPositionX, selectionArrow.anchoredPosition.y);
-            selectionArrow.localEulerAngles = new Vector3(0f, 0f , arrowRotationZ);
+            leftSelectionArrow.SetActive(true);
+            rightSelectionArrow.SetActive(false);
         }
         else
         {
-            selectionArrow.anchoredPosition = new Vector2(arrowPositionX, selectionArrow.anchoredPosition.y);
-            selectionArrow.localEulerAngles = new Vector3(0f, 0f, -arrowRotationZ);
+            rightSelectionArrow.SetActive(true);
+            leftSelectionArrow.SetActive(false);
         }
     }
 

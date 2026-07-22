@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private IInteractable currentInteractable;
     [SerializeField] private LayerMask chestLayer;
+
+    public event Action<IInteractable> OnInteractableEntered;
+    public event Action OnInteractableExited;
+
+    private IInteractable currentInteractable;
 
     private void OnEnable()
     {
-
         PlayerInput.Instance.OnInteractAction += PlayerInput_OnInteractAction;
     }
     private void OnDisable()
@@ -19,36 +22,34 @@ public class PlayerInteraction : MonoBehaviour
 
     private void PlayerInput_OnInteractAction()
     {
-
-
-        if (currentInteractable != null)
-        {
-            currentInteractable.Interact();
-        }
+        currentInteractable?.Interact();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((chestLayer.value & (1 << collision.gameObject.layer)) != 0)
-        {
-            IInteractable interactable = collision.GetComponent<IInteractable>();
-            if (interactable != null)
-            {
-                currentInteractable = interactable;
-            } 
-        }
+        if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
+            return;
 
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+
+        if (interactable == null)
+            return;
+
+        currentInteractable = interactable;
+        OnInteractableEntered?.Invoke(interactable);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((chestLayer.value & (1 << collision.gameObject.layer)) != 0)
-        {
-            IInteractable interactable = collision.GetComponent<IInteractable>();
-            if (interactable != null && interactable == currentInteractable)
-            {
-                currentInteractable = null;
-            } 
-        }
+        if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
+            return;
+
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+
+        if (interactable == null || interactable != currentInteractable)
+            return;
+
+        currentInteractable = null;
+        OnInteractableExited?.Invoke();
     }
 
 }

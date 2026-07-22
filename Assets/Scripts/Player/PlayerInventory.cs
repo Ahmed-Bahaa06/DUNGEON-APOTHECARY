@@ -24,6 +24,12 @@ public class PlayerInventory : MonoBehaviour
         PlayerInput.Instance.OnSelectLeftItemAction += PlayerInput_OnSelectLeftItemAction;
         PlayerInput.Instance.OnSelectRightItemAction += PlayerInput_OnSelectRightItemAction;
         PlayerInput.Instance.OnDropAction += PlayerInput_OnDropAction;
+        PlayerInput.Instance.OnToggleSlotAction += PlayerInput_OnToggleSlotAction;
+    }
+
+    private void PlayerInput_OnToggleSlotAction()
+    {
+        SelectSlot(1 - selectedSlot);
     }
 
     private void PlayerInput_OnDropAction()

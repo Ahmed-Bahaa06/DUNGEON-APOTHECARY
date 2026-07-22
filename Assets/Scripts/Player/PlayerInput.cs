@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     public event Action OnDropAction;
     public event Action OnSelectLeftItemAction;
     public event Action OnSelectRightItemAction;
+    public event Action OnToggleSlotAction;
 
     private MyInputActions myInput;
 
@@ -35,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         myInput.Player.Drop.performed += Drop_performed;
         myInput.Player.SelectLeftItem.performed += SelectLeftItem_performed;
         myInput.Player.SelectRightItem.performed += SelectRightItem_performed;
+        myInput.Player.Scroll.performed += Scroll_performed;
     }
 
 
@@ -44,9 +46,17 @@ public class PlayerInput : MonoBehaviour
         myInput.Player.Interact.performed -= Interact_performed;
         myInput.Player.Drop.performed -= Drop_performed;
         myInput.Player.SelectLeftItem.performed -= SelectLeftItem_performed;
-        myInput.Player.SelectRightItem.performed -= SelectRightItem_performed;
+        myInput.Player.Scroll.performed -= Scroll_performed;
 
         myInput.Disable();
+    }
+
+    private void Scroll_performed(InputAction.CallbackContext obj)
+    {
+        if (obj.ReadValue<float>() != 0)
+        {
+            OnToggleSlotAction?.Invoke();
+        }
     }
 
     private void Drop_performed(InputAction.CallbackContext obj)

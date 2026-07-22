@@ -4,6 +4,9 @@ using UnityEngine;
 public class Chest : MonoBehaviour , IInteractable
 {
     [SerializeField] private ItemSO item;
+    [SerializeField] private GameObject interactionPoint;
+    [SerializeField] private string interactionText;
+    [SerializeField] private string loadingText;
     [SerializeField] private float refillTimerMax = 5f;
 
     private bool canOpen = true;
@@ -11,6 +14,7 @@ public class Chest : MonoBehaviour , IInteractable
 
     public event Action OnChestOpened;
     public event Action OnChestRefilled;
+    public event Action OnStateChanged;
 
     private float refillTimer;
 
@@ -36,6 +40,7 @@ public class Chest : MonoBehaviour , IInteractable
     public void FinishRefill()
     {
         canOpen = true;
+        OnStateChanged?.Invoke();
     }
 
     public void Interact()
@@ -51,5 +56,25 @@ public class Chest : MonoBehaviour , IInteractable
         refillTimer = refillTimerMax;
 
         OnChestOpened?.Invoke();
+        OnStateChanged?.Invoke();
+    }
+
+    public Vector3 GetInteractionPoint()
+    {
+        return interactionPoint.transform.position;
+    }
+
+    public string GetInteractionText()
+    {
+        return interactionText;
+    }
+    public string GetLoadingText()
+    {
+        return loadingText;
+    }
+
+    public bool CanInteract()
+    {
+        return canOpen;
     }
 }

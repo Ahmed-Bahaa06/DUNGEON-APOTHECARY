@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "5df1fb03-eac7-48ee-94d8-3c29136fe70d",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -220,8 +229,19 @@
                 },
                 {
                     "name": "",
+                    "id": "0901a005-b2a7-4c22-9a6b-b771f034cba4",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b410bce6-9634-4f9a-9a9c-e85d678692e6",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -243,7 +263,7 @@
                 {
                     "name": "",
                     "id": "02fa3357-2f0c-4a92-aeae-7a27c08cead5",
-                    "path": "<Keyboard>/g",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -259,6 +279,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SelectRightItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5671e9e5-3014-4b46-8449-42e9e4e7203d",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
