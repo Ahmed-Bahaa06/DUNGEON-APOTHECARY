@@ -5,9 +5,6 @@ using System.Collections.Generic;
 [CreateAssetMenu()]
 public class CraftedCureRecipeSO : ScriptableObject
 {
-
-    public List<ItemSO> itemList;
-
-    public string cureName;
-    public Sprite sprite;
+    public List<ItemSO> ingredients;
+    public ItemSO craftedCure;
 }

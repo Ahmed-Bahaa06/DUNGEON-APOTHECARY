@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -42,6 +44,7 @@ public class PlayerInventory : MonoBehaviour
         PlayerInput.Instance.OnSelectLeftItemAction -= PlayerInput_OnSelectLeftItemAction;
         PlayerInput.Instance.OnSelectRightItemAction -= PlayerInput_OnSelectRightItemAction;
         PlayerInput.Instance.OnDropAction -= PlayerInput_OnDropAction;
+        PlayerInput.Instance.OnToggleSlotAction -= PlayerInput_OnToggleSlotAction;
     }
 
     private void PlayerInput_OnSelectRightItemAction()
@@ -91,6 +94,24 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
+    public void RemoveItems(List<ItemSO> ingredients)
+    {
+
+        foreach (ItemSO ingredient in ingredients)
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (slots[i] == ingredient)
+                {
+                    slots[i] = null;
+                    break;
+                }
+            }
+        }
+
+        OnInventoryChanged?.Invoke();
+    }
+
     public ItemSO GetSelectedItem()
     {
         return slots[selectedSlot];
@@ -137,5 +158,10 @@ public class PlayerInventory : MonoBehaviour
     public bool HasSelectedItem()
     {
         return slots[selectedSlot] != null;
+    }
+
+    public int GetSlotCount()
+    {
+        return SlotCount;
     }
 }

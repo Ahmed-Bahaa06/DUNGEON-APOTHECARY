@@ -26,8 +26,8 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
-            return;
+        //if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
+        //    return;
 
         IInteractable interactable = collision.GetComponent<IInteractable>();
 
@@ -40,8 +40,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
-            return;
+        //if ((chestLayer.value & (1 << collision.gameObject.layer)) == 0)
+        //    return;
 
         IInteractable interactable = collision.GetComponent<IInteractable>();
 

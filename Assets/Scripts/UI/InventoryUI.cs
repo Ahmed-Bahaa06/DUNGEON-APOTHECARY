@@ -8,8 +8,6 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject leftSelectionArrow;
     [SerializeField] private GameObject rightSelectionArrow;
 
-    //private float arrowPositionX = 1.5f;
-    //private float arrowRotationZ = 90f;
 
     private void OnEnable()
     {

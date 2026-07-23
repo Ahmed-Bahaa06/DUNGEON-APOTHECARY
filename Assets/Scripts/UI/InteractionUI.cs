@@ -62,16 +62,20 @@ public class InteractionUI : MonoBehaviour
         promptRoot.SetActive(true);
         promptRoot.transform.position = currentInteractable.GetInteractionPoint();
 
-        if (currentInteractable.CanInteract())
+        interactionText.text = currentInteractable.GetCurrentInteractionText();
+
+        RectTransform textRect = interactionText.rectTransform;
+
+        if (currentInteractable.ShowInteractionKey())
         {
-            keyImage.SetActive(true);
-            interactionText.text = currentInteractable.GetInteractionText();
+            textRect.anchoredPosition = new Vector2(0.5f, textRect.anchoredPosition.y);
         }
         else
         {
-            keyImage.SetActive(false);
-            interactionText.text = currentInteractable.GetLoadingText();
+            textRect.anchoredPosition = new Vector2(0f, textRect.anchoredPosition.y);
         }
+
+        keyImage.SetActive(currentInteractable.ShowInteractionKey());
     }
 
 }

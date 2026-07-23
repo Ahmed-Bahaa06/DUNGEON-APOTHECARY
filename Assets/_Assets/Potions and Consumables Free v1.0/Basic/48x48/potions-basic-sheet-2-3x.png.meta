@@ -1,0 +1,1170 @@
+fileFormatVersion: 2
+guid: c260f1a199d157e4aa71960551f6c729
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5074294188195174766
+    second: potions-basic-sheet-2-3x_0
+  - first:
+      213: 8126348776517025869
+    second: potions-basic-sheet-2-3x_1
+  - first:
+      213: -6896079204485102218
+    second: potions-basic-sheet-2-3x_2
+  - first:
+      213: 38163158003032234
+    second: potions-basic-sheet-2-3x_3
+  - first:
+      213: 8190286057425135804
+    second: potions-basic-sheet-2-3x_4
+  - first:
+      213: -5006292890419226930
+    second: potions-basic-sheet-2-3x_5
+  - first:
+      213: 4217297370577888570
+    second: potions-basic-sheet-2-3x_6
+  - first:
+      213: 2793143571622232455
+    second: potions-basic-sheet-2-3x_7
+  - first:
+      213: -829820486568114140
+    second: potions-basic-sheet-2-3x_8
+  - first:
+      213: 4095915698081741138
+    second: potions-basic-sheet-2-3x_9
+  - first:
+      213: 5445884063634461136
+    second: potions-basic-sheet-2-3x_10
+  - first:
+      213: -6186301171476981917
+    second: potions-basic-sheet-2-3x_11
+  - first:
+      213: -4253411889531699424
+    second: potions-basic-sheet-2-3x_12
+  - first:
+      213: 2911823581233204357
+    second: potions-basic-sheet-2-3x_13
+  - first:
+      213: 1768363990908798439
+    second: potions-basic-sheet-2-3x_14
+  - first:
+      213: -208168808559100251
+    second: potions-basic-sheet-2-3x_15
+  - first:
+      213: 6256336491242505067
+    second: potions-basic-sheet-2-3x_16
+  - first:
+      213: 4899113385439376974
+    second: potions-basic-sheet-2-3x_17
+  - first:
+      213: 2401336631746744543
+    second: potions-basic-sheet-2-3x_18
+  - first:
+      213: 3968814763948558823
+    second: potions-basic-sheet-2-3x_19
+  - first:
+      213: 7415342896203954830
+    second: potions-basic-sheet-2-3x_20
+  - first:
+      213: 6723895444573327369
+    second: potions-basic-sheet-2-3x_21
+  - first:
+      213: -251471640475809419
+    second: potions-basic-sheet-2-3x_22
+  - first:
+      213: -5028736798591394155
+    second: potions-basic-sheet-2-3x_23
+  - first:
+      213: 6901892511579643116
+    second: potions-basic-sheet-2-3x_24
+  - first:
+      213: 3226064732499244874
+    second: potions-basic-sheet-2-3x_25
+  - first:
+      213: 5101796324842658540
+    second: potions-basic-sheet-2-3x_26
+  - first:
+      213: -3592823728667200356
+    second: potions-basic-sheet-2-3x_27
+  - first:
+      213: -8390415261477726821
+    second: potions-basic-sheet-2-3x_28
+  - first:
+      213: -576042553666595328
+    second: potions-basic-sheet-2-3x_29
+  - first:
+      213: 1744795883883966899
+    second: potions-basic-sheet-2-3x_30
+  - first:
+      213: 7028364658370890717
+    second: potions-basic-sheet-2-3x_31
+  - first:
+      213: 5060211044253003621
+    second: potions-basic-sheet-2-3x_32
+  - first:
+      213: 7862221144183378734
+    second: potions-basic-sheet-2-3x_33
+  - first:
+      213: -5631785174542629476
+    second: potions-basic-sheet-2-3x_34
+  - first:
+      213: -127828747887533502
+    second: potions-basic-sheet-2-3x_35
+  - first:
+      213: 122164645650696769
+    second: potions-basic-sheet-2-3x_36
+  - first:
+      213: 1837824262162318126
+    second: potions-basic-sheet-2-3x_37
+  - first:
+      213: -3419828648154670875
+    second: potions-basic-sheet-2-3x_38
+  - first:
+      213: 3473032048373928661
+    second: potions-basic-sheet-2-3x_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69d33deda38b6640800000000000000
+      internalID: 5074294188195174766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d404a31382796c070800000000000000
+      internalID: 8126348776517025869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67505b120843c40a0800000000000000
+      internalID: -6896079204485102218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa02744a035978000800000000000000
+      internalID: 38163158003032234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8e8a576cdb9a170800000000000000
+      internalID: 8190286057425135804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec69ff00423168ab0800000000000000
+      internalID: -5006292890419226930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35eb754d99d68a30800000000000000
+      internalID: 4217297370577888570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_7
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7818539974d33c620800000000000000
+      internalID: 2793143571622232455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42804cef9a2eb74f0800000000000000
+      internalID: -829820486568114140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259bb1650ad97d830800000000000000
+      internalID: 4095915698081741138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d194ecc3baa39b40800000000000000
+      internalID: 5445884063634461136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36718886cd7d52aa0800000000000000
+      internalID: -6186301171476981917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_12
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f3a090c68d8f4c0800000000000000
+      internalID: -4253411889531699424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_13
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cc200ae10e86820800000000000000
+      internalID: 2911823581233204357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_14
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e506b73ead7a8810800000000000000
+      internalID: 1768363990908798439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aeb480529f6c1df0800000000000000
+      internalID: -208168808559100251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_16
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63c2db24e8f2d650800000000000000
+      internalID: 6256336491242505067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_17
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e46b97ddaa52df340800000000000000
+      internalID: 4899113385439376974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0d56991f2435120800000000000000
+      internalID: 2401336631746744543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_19
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9ca780000141730800000000000000
+      internalID: 3968814763948558823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8af3ff631798e660800000000000000
+      internalID: 7415342896203954830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_21
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90019a83843105d50800000000000000
+      internalID: 6723895444573327369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_22
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579ca5610e7928cf0800000000000000
+      internalID: -251471640475809419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_23
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e560b6686563ab0800000000000000
+      internalID: -5028736798591394155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_24
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec12a6eba278cf50800000000000000
+      internalID: 6901892511579643116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_25
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a47780328c845cc20800000000000000
+      internalID: 3226064732499244874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_26
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cead3aa1ab83dc640800000000000000
+      internalID: 5101796324842658540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_27
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c947238bad9b32ec0800000000000000
+      internalID: -3592823728667200356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_28
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b959a9526c14f8b80800000000000000
+      internalID: -8390415261477726821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_29
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0069135795c7108f0800000000000000
+      internalID: -576042553666595328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_30
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b1b770bc92c63810800000000000000
+      internalID: 1744795883883966899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_31
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb4b1e3b64c98160800000000000000
+      internalID: 7028364658370890717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_32
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f6535722b793640800000000000000
+      internalID: 5060211044253003621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_33
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e239d9c89783c1d60800000000000000
+      internalID: 7862221144183378734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_34
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c954314e831e7d1b0800000000000000
+      internalID: -5631785174542629476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242a41a5e6cd93ef0800000000000000
+      internalID: -127828747887533502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_36
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a0f14191402b100800000000000000
+      internalID: 122164645650696769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_37
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2387c1ed63418910800000000000000
+      internalID: 1837824262162318126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_38
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8590aa6f35a80d0800000000000000
+      internalID: -3419828648154670875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potions-basic-sheet-2-3x_39
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d210e04f30b23030800000000000000
+      internalID: 3473032048373928661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      potions-basic-sheet-2-3x_0: 5074294188195174766
+      potions-basic-sheet-2-3x_1: 8126348776517025869
+      potions-basic-sheet-2-3x_10: 5445884063634461136
+      potions-basic-sheet-2-3x_11: -6186301171476981917
+      potions-basic-sheet-2-3x_12: -4253411889531699424
+      potions-basic-sheet-2-3x_13: 2911823581233204357
+      potions-basic-sheet-2-3x_14: 1768363990908798439
+      potions-basic-sheet-2-3x_15: -208168808559100251
+      potions-basic-sheet-2-3x_16: 6256336491242505067
+      potions-basic-sheet-2-3x_17: 4899113385439376974
+      potions-basic-sheet-2-3x_18: 2401336631746744543
+      potions-basic-sheet-2-3x_19: 3968814763948558823
+      potions-basic-sheet-2-3x_2: -6896079204485102218
+      potions-basic-sheet-2-3x_20: 7415342896203954830
+      potions-basic-sheet-2-3x_21: 6723895444573327369
+      potions-basic-sheet-2-3x_22: -251471640475809419
+      potions-basic-sheet-2-3x_23: -5028736798591394155
+      potions-basic-sheet-2-3x_24: 6901892511579643116
+      potions-basic-sheet-2-3x_25: 3226064732499244874
+      potions-basic-sheet-2-3x_26: 5101796324842658540
+      potions-basic-sheet-2-3x_27: -3592823728667200356
+      potions-basic-sheet-2-3x_28: -8390415261477726821
+      potions-basic-sheet-2-3x_29: -576042553666595328
+      potions-basic-sheet-2-3x_3: 38163158003032234
+      potions-basic-sheet-2-3x_30: 1744795883883966899
+      potions-basic-sheet-2-3x_31: 7028364658370890717
+      potions-basic-sheet-2-3x_32: 5060211044253003621
+      potions-basic-sheet-2-3x_33: 7862221144183378734
+      potions-basic-sheet-2-3x_34: -5631785174542629476
+      potions-basic-sheet-2-3x_35: -127828747887533502
+      potions-basic-sheet-2-3x_36: 122164645650696769
+      potions-basic-sheet-2-3x_37: 1837824262162318126
+      potions-basic-sheet-2-3x_38: -3419828648154670875
+      potions-basic-sheet-2-3x_39: 3473032048373928661
+      potions-basic-sheet-2-3x_4: 8190286057425135804
+      potions-basic-sheet-2-3x_5: -5006292890419226930
+      potions-basic-sheet-2-3x_6: 4217297370577888570
+      potions-basic-sheet-2-3x_7: 2793143571622232455
+      potions-basic-sheet-2-3x_8: -829820486568114140
+      potions-basic-sheet-2-3x_9: 4095915698081741138
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
