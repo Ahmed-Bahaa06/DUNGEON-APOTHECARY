@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance {  get; private set; }
+    //public static PlayerMovement Instance {  get; private set; }
 
     private LayerMask wallMask;
     private Rigidbody2D rb;
@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //}
 
         wallMask = LayerMask.GetMask("Wall");
         rb = GetComponent<Rigidbody2D>();

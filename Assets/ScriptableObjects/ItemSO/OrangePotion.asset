@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OrangePotion
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSO
   itemName: Orange Potion
-  sprite: {fileID: 21300000, guid: 7a60aef9ed3040246a8ba2306f218dd9, type: 3}
+  sprite: {fileID: 7939088511410040547, guid: c82dd266e8c849d4b97e135ea11eaa1a, type: 3}
   type: 0

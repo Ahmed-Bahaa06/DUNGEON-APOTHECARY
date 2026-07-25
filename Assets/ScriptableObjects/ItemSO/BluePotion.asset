@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BluePotion
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSO
   itemName: Blue Potion
-  sprite: {fileID: 21300000, guid: e53029088c6d629459a79850145ada8f, type: 3}
+  sprite: {fileID: 3478575808937017171, guid: c82dd266e8c849d4b97e135ea11eaa1a, type: 3}
   type: 0
