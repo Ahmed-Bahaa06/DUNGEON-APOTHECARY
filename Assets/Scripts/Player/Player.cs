@@ -24,21 +24,43 @@ public class Player : MonoBehaviour
     {
         collision.OnInteractableEntered += interaction.SetInteractable;
         collision.OnInteractableExited += interaction.ClearInteractable;
-
         collision.OnMonsterEntered += DeliveryManager.Instance.TryDeliver;
+
+        DeliveryManager.Instance.OnCorrectDelivery += DeliveryManager_OnCorrectDelivery;
+        DeliveryManager.Instance.OnWrongDelivery += DeliveryManager_OnWrongDelivery;
+        DeliveryManager.Instance.OnEmptyDelivery += DeliveryManager_OnEmptyDelivery;
 
         health.OnInvincibilityStarted += visual.OnInvincibilityStarted;
     }
 
-    private void OnDisable()
+    private void DeliveryManager_OnWrongDelivery()
     {
-        collision.OnInteractableEntered -= interaction.SetInteractable;
-        collision.OnInteractableExited -= interaction.ClearInteractable;
+        health.TakeDamage();
 
-        collision.OnMonsterEntered -= DeliveryManager.Instance.TryDeliver;
+        ConsumeSelectedCure();
+    }
 
-        health.OnInvincibilityStarted -= visual.OnInvincibilityStarted;
+    private void DeliveryManager_OnEmptyDelivery()
+    {
+        health.TakeDamage();
+    }
 
+    private void DeliveryManager_OnCorrectDelivery(Monster monster)
+    {
+        ConsumeSelectedCure();
+    }
+
+    private void ConsumeSelectedCure()
+    {
+        ItemSO item = PlayerInventory.Instance.GetSelectedItem();
+
+        if (item == null)
+            return;
+
+        if (item.type == ItemSO.ItemType.Cure)
+        {
+            PlayerInventory.Instance.RemoveSelectedItem();
+        }
     }
 
     private void Update()
@@ -50,5 +72,19 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         movement.Move(moveInput, speed);
+    }
+
+    private void OnDisable()
+    {
+        collision.OnInteractableEntered -= interaction.SetInteractable;
+        collision.OnInteractableExited -= interaction.ClearInteractable;
+        collision.OnMonsterEntered -= DeliveryManager.Instance.TryDeliver;
+
+        DeliveryManager.Instance.OnCorrectDelivery -= DeliveryManager_OnCorrectDelivery;
+        DeliveryManager.Instance.OnWrongDelivery -= DeliveryManager_OnWrongDelivery;
+        DeliveryManager.Instance.OnEmptyDelivery -= DeliveryManager_OnEmptyDelivery;
+
+        health.OnInvincibilityStarted -= visual.OnInvincibilityStarted;
+
     }
 }

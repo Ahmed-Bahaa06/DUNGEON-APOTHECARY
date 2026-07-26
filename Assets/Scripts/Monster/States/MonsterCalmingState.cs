@@ -10,7 +10,6 @@ public class MonsterCalmingState : MonsterState
 
     public override void Enter()
     {
-        Debug.Log("Enter Calming");
         timer = 2f;
     }
 
@@ -22,11 +21,5 @@ public class MonsterCalmingState : MonsterState
         {
             monster.ChangeState(monster.ExitingState);
         }
-    }
-
-    public override void Exit()
-    {
-        Debug.Log("Exit Calming");
-
     }
 }

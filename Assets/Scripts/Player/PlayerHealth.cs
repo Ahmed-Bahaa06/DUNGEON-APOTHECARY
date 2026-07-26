@@ -35,16 +35,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (isInvincible)
-        {
-            Debug.Log("Ignored damage (Invincible)");   
-            return;
-        }
+        if (isInvincible) return;
 
         currentHealth--;
-        Debug.Log($"Player took damage. Health = {currentHealth}");
-
-        OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -56,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
         isInvincible = true;
         invincibleTimer = invincibleTime;
 
+        OnHealthChanged?.Invoke(currentHealth);
         OnInvincibilityStarted?.Invoke();
     }
 
@@ -68,6 +62,4 @@ public class PlayerHealth : MonoBehaviour
     {
         return currentHealth;
     }
-
-
 }

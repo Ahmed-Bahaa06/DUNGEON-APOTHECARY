@@ -1,9 +1,16 @@
+using System;
 using UnityEngine;
 using static UnityEditor.Progress;
 
+
+[DefaultExecutionOrder(-100)]
 public class DeliveryManager : MonoBehaviour
 {
     public static DeliveryManager Instance {  get; private set; }
+
+    public event Action<Monster> OnCorrectDelivery;
+    public event Action OnWrongDelivery;
+    public event Action OnEmptyDelivery;
 
     private void Awake()
     {
@@ -12,33 +19,23 @@ public class DeliveryManager : MonoBehaviour
 
     public void TryDeliver(Monster monster)
     {
-        ItemSO cure = PlayerInventory.Instance.GetSelectedItem();
+        if (!monster.CanReceiveDelivery) return;
 
-        Debug.Log(cure == null ? "Empty" : cure.itemName);
+        ItemSO cure = PlayerInventory.Instance.GetSelectedItem();
 
         if (cure == null)
         {
-            Debug.Log("No cure");
-            Player.Instance.health.TakeDamage();
+            OnEmptyDelivery?.Invoke();
             return;
         }
 
-        bool healed = monster.ReceiveCure(cure);
-
-        if (healed)
+        if (monster.Recipe.ReceiveCure(cure))
         {
-            monster.Heal();
-            Debug.Log("Monster healed!");
+            OnCorrectDelivery?.Invoke(monster);
         }
         else
         {
-            Debug.Log("Wrong cure");
-            Player.Instance.health.TakeDamage();
-        }
-
-        if (cure.type == ItemSO.ItemType.Cure)
-        {
-            PlayerInventory.Instance.RemoveSelectedItem();
+            OnWrongDelivery?.Invoke();
         }
     }
 }

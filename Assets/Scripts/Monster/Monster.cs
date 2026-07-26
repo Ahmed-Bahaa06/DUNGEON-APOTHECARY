@@ -8,13 +8,11 @@ public class Monster : MonoBehaviour
     [SerializeField] private float patienceTime = 5f;
     public float PatienceTime => patienceTime;
 
-    [SerializeField] private float moveSpeed = 2f;
-
     [SerializeField] private Transform exitPoint;
     public Transform ExitPoint => exitPoint;
 
-    private Vector2 moveDirection;
-    public Vector2 MoveDirection => moveDirection;
+    public MonsterMovement Movement { get; private set; }
+    public MonsterRecipe Recipe { get; private set; }
 
     public MonsterWaitingState WaitingState { get; private set; }
     public MonsterAngryState AngryState { get; private set; }
@@ -22,20 +20,14 @@ public class Monster : MonoBehaviour
     public MonsterCalmingState CalmingState { get; private set; }
     public MonsterExitingState ExitingState { get; private set; }
 
-    [Header("Recipe")]
-    [SerializeField] public CraftedCureRecipeSO recipeSO;
-
-    private ItemSO requiredCure;
     private MonsterState currentState;
 
     public event Action OnHealed;
 
-    public Rigidbody2D Rigidbody { get; private set; }
-
     private void Awake()
     {
-        requiredCure = recipeSO.craftedCure;
-        Rigidbody = GetComponent<Rigidbody2D>();
+        Movement = GetComponent<MonsterMovement>();
+        Recipe = GetComponent<MonsterRecipe>();
 
         WaitingState = new MonsterWaitingState(this);
         AngryState = new MonsterAngryState(this);
@@ -49,11 +41,15 @@ public class Monster : MonoBehaviour
         ChangeState(WaitingState);
     }
 
+    private void OnEnable()
+    {
+        DeliveryManager.Instance.OnCorrectDelivery += DeliverySucceeded;
+    }
+
     private void Update()
     {
         currentState?.Update();
     }
-
 
     public void ChangeState(MonsterState newState)
     {
@@ -70,29 +66,18 @@ public class Monster : MonoBehaviour
         ChangeState(CalmingState);
     }
 
-    public bool ReceiveCure(ItemSO cure)
+    private void DeliverySucceeded(Monster monster)
     {
-        Debug.Log("Expected: " + requiredCure.itemName);
-        Debug.Log("Received: " + cure.itemName);
+        if (monster != this)
+            return;
 
-        return cure == requiredCure;
+        Heal();
     }
 
-    public void Move(Vector2 direction)
+    public bool CanReceiveDelivery => currentState.CanReceiveDelivery;
+    
+    private void OnDisable()
     {
-        moveDirection = direction;
-        Rigidbody.linearVelocity = direction * moveSpeed;
-    }
-
-    public void StopMoving()
-    {
-        moveDirection = Vector2.zero;
-        Rigidbody.linearVelocity = Vector2.zero;
-    }
-
-    public void MoveTowards(Vector3 targetPosition)
-    {
-        Vector2 direction = (targetPosition - transform.position).normalized;
-        Move(direction);
+        DeliveryManager.Instance.OnCorrectDelivery -= DeliverySucceeded;
     }
 }

@@ -4,19 +4,15 @@ public class MonsterChasingState : MonsterState
 {
     public MonsterChasingState(Monster monster) : base(monster) { }
 
-    public override void Enter()
-    {
-        Debug.Log("Enter Chasing");
-    }
+    public override bool CanReceiveDelivery => true;
 
     public override void Update()
     {
-        monster.MoveTowards(Player.Instance.transform.position);
+        monster.Movement.MoveTowards(Player.Instance.transform.position);
     }
 
     public override void Exit()
     {
-        Debug.Log("Exit Chasing");
-        monster.StopMoving();
+        monster.Movement.Stop();
     }
 }

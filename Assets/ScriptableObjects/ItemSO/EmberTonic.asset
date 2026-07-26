@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EmberTonic
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSO
   itemName: Ember Tonic
-  sprite: {fileID: 21300000, guid: 5c7014d3efc349c4abdc1b6eb1b3eefb, type: 3}
-  type: 0
+  sprite: {fileID: 21300000, guid: e09e48ff493f5f9419d5d19d20514f1b, type: 3}
+  type: 1

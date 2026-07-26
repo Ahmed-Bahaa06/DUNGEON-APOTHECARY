@@ -5,10 +5,10 @@ public class MonsterWaitingState : MonsterState
     private float timer;
     public MonsterWaitingState(Monster monster) : base(monster) { }
 
+    public override bool CanReceiveDelivery => true;
+
     public override void Enter()
     {
-        Debug.Log("Enter Waiting");
-
         timer = monster.PatienceTime;
     }
 
@@ -20,10 +20,5 @@ public class MonsterWaitingState : MonsterState
         {
             monster.ChangeState(monster.AngryState);
         }
-    }
-
-    public override void Exit()
-    {
-        Debug.Log("Exit Waiting");
     }
 }

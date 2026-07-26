@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -17,15 +18,7 @@ public class PlayerCollision : MonoBehaviour
             OnInteractableEntered?.Invoke(interactable);
         }
 
-        Monster monster = collision.GetComponent<Monster>();
-
-        if (monster != null)
-        {
-            Debug.Log("Touched " + monster);
-            OnMonsterEntered?.Invoke(monster);
-        }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         IInteractable interactable = collision.GetComponent<IInteractable>();
@@ -34,10 +27,14 @@ public class PlayerCollision : MonoBehaviour
         {
             OnInteractableExited?.Invoke(interactable);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Monster monster = collision.GetComponent<Monster>();
 
-        //Monster monster = collision.GetComponent<Monster>();
-
-        //if (monster != null)
-        //    OnMonsterEntered?.Invoke(monster);
+        if (monster != null)
+        {
+            OnMonsterEntered?.Invoke(monster);
+        }
     }
 }

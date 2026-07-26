@@ -6,9 +6,10 @@ public class MonsterAngryState : MonsterState
 
     public MonsterAngryState(Monster monster) : base(monster) { }
 
+    public override bool CanReceiveDelivery => true;
+
     public override void Enter()
     {
-        Debug.Log("Enter Angry");
         timer = 1f;
     }
 
@@ -20,10 +21,5 @@ public class MonsterAngryState : MonsterState
         {
             monster.ChangeState(monster.ChasingState);
         }
-    }
-
-    public override void Exit()
-    {
-        Debug.Log("Exit Angry");
     }
 }

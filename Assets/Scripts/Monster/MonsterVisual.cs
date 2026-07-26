@@ -6,11 +6,6 @@ public class MonsterVisual : MonoBehaviour
     [SerializeField] private GameObject InfectedVisual;
     [SerializeField] private GameObject healedVisual;
 
-    [SerializeField] private GameObject floatingIconContainer;
-    [SerializeField] private SpriteRenderer cureSprite;
-    [SerializeField] private SpriteRenderer ingreidentOneSprite;
-    [SerializeField] private SpriteRenderer ingreidentTwoSprite;
-
     private float lastInputX;
     private float lastInputY;
 
@@ -28,17 +23,18 @@ public class MonsterVisual : MonoBehaviour
         healedVisual.SetActive(false);
 
         currentAnimator = unhealedAnimator;
-
-        cureSprite.sprite = monster.recipeSO.craftedCure.sprite;
-        ingreidentOneSprite.sprite = monster.recipeSO.ingredients[0].sprite;
-        ingreidentTwoSprite.sprite = monster.recipeSO.ingredients[1].sprite;
-
     }
 
     private void OnEnable()
     {
         monster.OnHealed += Monster_OnHealed;
     }
+
+    private void Update()
+    {
+        UpdateVisual(monster.Movement.MoveDirection);
+    }
+
     private void OnDisable()
     {
         monster.OnHealed -= Monster_OnHealed;
@@ -47,13 +43,8 @@ public class MonsterVisual : MonoBehaviour
     private void Monster_OnHealed()
     {
         currentAnimator.SetTrigger("IsHealing");
-        floatingIconContainer.SetActive(false);
     }
 
-    private void Update()
-    {
-        UpdateVisual(monster.MoveDirection);
-    }
 
     public void OnAnimationHealing_Finished()
     {
@@ -82,9 +73,5 @@ public class MonsterVisual : MonoBehaviour
 
         currentAnimator.SetFloat("LastInputX", lastInputX);
         currentAnimator.SetFloat("LastInputY", lastInputY);
-
-        
-
-
     }
 }
