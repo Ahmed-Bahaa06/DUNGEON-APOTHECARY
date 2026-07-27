@@ -9,6 +9,8 @@ public class MonsterWaitingState : MonsterState
 
     public override void Enter()
     {
+        monster.Movement.Stop();
+
         timer = monster.PatienceTime;
     }
 

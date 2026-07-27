@@ -4,12 +4,13 @@ using UnityEngine;
 public class MonsterCalmingState : MonsterState
 {
     private float timer;
-    
 
     public MonsterCalmingState(Monster monster) : base(monster) { }
 
     public override void Enter()
     {
+        monster.Movement.Stop();
+
         timer = 2f;
     }
 

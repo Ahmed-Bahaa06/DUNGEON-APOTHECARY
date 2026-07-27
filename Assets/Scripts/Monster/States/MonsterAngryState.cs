@@ -10,6 +10,8 @@ public class MonsterAngryState : MonsterState
 
     public override void Enter()
     {
+        monster.Movement.Stop();
+
         timer = 1f;
     }
 

@@ -1,34 +1,42 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using Pathfinding;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
-
-    public Rigidbody2D rb;
+    [SerializeField] private AIPath aiPath;
 
     public Vector2 MoveDirection { get; private set; }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        if (aiPath == null)
+            aiPath = GetComponent<AIPath>();
     }
+
+    private void Update()
+    {
+        MoveDirection = aiPath.desiredVelocity.normalized;
+    }
+
 
     public void Move(Vector2 direction)
     {
-        MoveDirection = direction;
-        rb.linearVelocity = direction * moveSpeed;
-    }
+        aiPath.isStopped = false;
 
-    public void Stop()
-    {
-        MoveDirection = Vector2.zero;
-        rb.linearVelocity = Vector2.zero;
+        aiPath.destination = transform.position + (Vector3)direction;
     }
 
     public void MoveTowards(Vector3 targetPosition)
     {
-        Vector2 direction = (targetPosition - transform.position).normalized;
-        Move(direction);
+        aiPath.isStopped = false;
+        aiPath.destination = targetPosition;
     }
+
+    public void Stop()
+    {
+        aiPath.isStopped = true;
+        MoveDirection = Vector2.zero;
+    }
+
+    public bool ReachedDestination => aiPath.reachedDestination;
 }

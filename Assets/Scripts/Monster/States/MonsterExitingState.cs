@@ -8,10 +8,10 @@ public class MonsterExitingState : MonsterState
     {
         monster.Movement.MoveTowards(monster.ExitPoint.position);
 
-        if (Vector2.Distance(monster.transform.position, monster.ExitPoint.position) < 0.1f)
+        if (monster.Movement.ReachedDestination)
         {
             monster.Movement.Stop();
-            UnityEngine.Object.Destroy(monster.gameObject);
+            Object.Destroy(monster.gameObject);
         }
     }
 }
