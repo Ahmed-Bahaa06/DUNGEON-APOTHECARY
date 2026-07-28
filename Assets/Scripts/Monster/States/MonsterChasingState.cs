@@ -13,6 +13,7 @@ public class MonsterChasingState : MonsterState
 
     public override void Exit()
     {
+        SpawnManager.Instance.MonsterStoppedChasing();
         monster.Movement.Stop();
     }
 }

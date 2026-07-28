@@ -2,21 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public static PlayerMovement Instance {  get; private set; }
-
-    private LayerMask wallMask;
+    [SerializeField] private LayerMask collisionMask;
     private Rigidbody2D rb;
     private BoxCollider2D box;
 
-
     private void Awake()
     {
-        //if (Instance == null)
-        //{
-        //    Instance = this;
-        //}
-
-        wallMask = LayerMask.GetMask("Wall");
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
     }
@@ -32,38 +23,34 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movement = input;
 
-        float distance = 0.05f;
-
-        // Check X movement
         if (movement.x != 0)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(
-                box.bounds.center,
-                box.bounds.size,
-                0f,
-                new Vector2(Mathf.Sign(movement.x), 0),
-                distance,
-                wallMask);
+            Vector2 dir = new Vector2(Mathf.Sign(movement.x), 0);
 
-            if (hit.collider != null)
+            if (IsBlocked(dir, collisionMask))
                 movement.x = 0;
         }
 
-        // Check Y movement
         if (movement.y != 0)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(
-                box.bounds.center,
-                box.bounds.size,
-                0f,
-                new Vector2(0, Mathf.Sign(movement.y)),
-                distance,
-                wallMask);
+            Vector2 dir = new Vector2(0, Mathf.Sign(movement.y));
 
-            if (hit.collider != null)
+            if (IsBlocked(dir, collisionMask))
                 movement.y = 0;
         }
 
         return movement.normalized;
+    }
+
+    private bool IsBlocked(Vector2 direction, LayerMask mask)
+    {
+        return Physics2D.BoxCast(
+            box.bounds.center,
+            box.bounds.size,
+            0f,
+            direction,
+            0.05f,
+            mask
+        ).collider != null;
     }
 }

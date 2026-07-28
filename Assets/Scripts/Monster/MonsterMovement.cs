@@ -35,6 +35,7 @@ public class MonsterMovement : MonoBehaviour
     public void Stop()
     {
         aiPath.isStopped = true;
+        aiPath.destination = transform.position;
         MoveDirection = Vector2.zero;
     }
 

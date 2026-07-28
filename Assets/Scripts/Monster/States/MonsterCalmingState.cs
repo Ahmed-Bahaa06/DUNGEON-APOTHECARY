@@ -11,7 +11,7 @@ public class MonsterCalmingState : MonsterState
     {
         monster.Movement.Stop();
 
-        timer = 2f;
+        timer = 1.5f;
     }
 
     public override void Update()

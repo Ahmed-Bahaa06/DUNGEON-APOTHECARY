@@ -4,12 +4,16 @@ using System;
 public class Monster : MonoBehaviour
 {
     [Header("Settings")]
-
     [SerializeField] private float patienceTime = 5f;
     public float PatienceTime => patienceTime;
 
     [SerializeField] private Transform exitPoint;
     public Transform ExitPoint => exitPoint;
+
+    public Vector3 WaitingPoint { get; private set; }
+    public Vector3 EntrancePoint { get; private set; }
+
+    public int Side { get; private set; }
 
     public MonsterMovement Movement { get; private set; }
     public MonsterRecipe Recipe { get; private set; }
@@ -49,6 +53,18 @@ public class Monster : MonoBehaviour
     private void Update()
     {
         currentState?.Update();
+    }
+
+    public void Initialize(Vector3 waitingPoint, Vector3 entrancePoint, int side)
+    {
+        WaitingPoint = waitingPoint;
+        EntrancePoint = entrancePoint;
+        Side = side;
+    }
+
+    public void SetWaitingPoint(Vector3 waitingPoint)
+    {
+        WaitingPoint = waitingPoint;
     }
 
     public void ChangeState(MonsterState newState)

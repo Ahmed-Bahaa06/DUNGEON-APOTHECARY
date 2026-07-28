@@ -2,26 +2,24 @@ using UnityEngine;
 
 public class MonsterAngryState : MonsterState
 {
-    private float timer;
-
     public MonsterAngryState(Monster monster) : base(monster) { }
 
     public override bool CanReceiveDelivery => true;
 
-    public override void Enter()
-    {
-        monster.Movement.Stop();
-
-        timer = 1f;
-    }
-
     public override void Update()
     {
-        timer -= Time.deltaTime;
+        monster.Movement.MoveTowards(monster.EntrancePoint);
 
-        if (timer <= 0f)
+        if (Vector2.Distance(monster.transform.position, monster.EntrancePoint) < 0.1f)
         {
+            monster.transform.position = monster.EntrancePoint;
             monster.ChangeState(monster.ChasingState);
         }
     }
+
+    public override void Exit()
+    {
+        monster.Movement.Stop();
+    }
 }
+

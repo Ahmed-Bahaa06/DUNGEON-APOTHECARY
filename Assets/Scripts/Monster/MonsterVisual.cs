@@ -56,10 +56,11 @@ public class MonsterVisual : MonoBehaviour
         currentAnimator.SetFloat("LastInputX", lastInputX);
         currentAnimator.SetFloat("LastInputY", lastInputY);
     }
+
     public void UpdateVisual(Vector2 moveDirection)
     {
 
-        bool isMoving = moveDirection.sqrMagnitude > 0;
+        bool isMoving = moveDirection.sqrMagnitude > 0.01;
         currentAnimator.SetBool("IsWalking", isMoving);
 
         currentAnimator.SetFloat("InputX", moveDirection.x);
