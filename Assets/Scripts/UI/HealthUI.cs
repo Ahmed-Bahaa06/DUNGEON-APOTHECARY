@@ -24,7 +24,7 @@ public class HealthUI : MonoBehaviour
 
     private void PlayerHealth_OnHealthChanged(int newHealth)
     {
-        if (newHealth < currentHealth)
+        if (newHealth <= currentHealth)
         {
             heartAnimators[currentHealth - 1].SetTrigger("LoseHeart");
         }

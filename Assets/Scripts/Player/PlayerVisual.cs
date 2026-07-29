@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerVisual : MonoBehaviour
 {
@@ -30,6 +31,28 @@ public class PlayerVisual : MonoBehaviour
         animator.SetFloat("LastInputX", lastInputX);
         animator.SetFloat("LastInputY", lastInputY);
 
+    }
+
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameOver += GameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameOver -= GameOver;
+    }
+
+    private void GameOver()
+    {
+        StartCoroutine(GameOverSequence());
+    }
+
+    private IEnumerator GameOverSequence()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        animator.SetTrigger("Death");
     }
 
     public void OnInvincibilityStarted()

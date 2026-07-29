@@ -11,6 +11,7 @@ public class MonsterExitingState : MonsterState
         if (monster.Movement.ReachedDestination)
         {
             monster.Movement.Stop();
+            monster.Served();
             Object.Destroy(monster.gameObject);
         }
     }

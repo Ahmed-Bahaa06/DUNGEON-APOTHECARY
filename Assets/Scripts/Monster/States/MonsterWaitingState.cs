@@ -8,7 +8,7 @@ public class MonsterWaitingState : MonsterState
 
     public override void Enter()
     {
-        timer = monster.PatienceTime;
+        timer = GameManager.Instance.MonsterPatience;
     }
 
     public override void Update()
@@ -27,7 +27,6 @@ public class MonsterWaitingState : MonsterState
         {
             if (SpawnManager.Instance.CanStartChasing())
             {
-                SpawnManager.Instance.MonsterLeftWaiting(monster);
                 monster.ChangeState(monster.AngryState);
             }
         }
@@ -35,6 +34,7 @@ public class MonsterWaitingState : MonsterState
 
     public override void Exit()
     {
+        SpawnManager.Instance.MonsterLeftWaiting(monster);
         monster.Movement.Stop();
     }
 

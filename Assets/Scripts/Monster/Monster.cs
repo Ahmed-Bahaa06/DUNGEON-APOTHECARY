@@ -4,10 +4,8 @@ using System;
 public class Monster : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float patienceTime = 5f;
-    public float PatienceTime => patienceTime;
-
     [SerializeField] private Transform exitPoint;
+        
     public Transform ExitPoint => exitPoint;
 
     public Vector3 WaitingPoint { get; private set; }
@@ -26,6 +24,7 @@ public class Monster : MonoBehaviour
 
     private MonsterState currentState;
 
+    public static event Action OnMonsterServed;
     public event Action OnHealed;
 
     private void Awake()
@@ -52,6 +51,7 @@ public class Monster : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsGameOver) return;
         currentState?.Update();
     }
 
@@ -80,6 +80,11 @@ public class Monster : MonoBehaviour
     {
         OnHealed?.Invoke();
         ChangeState(CalmingState);
+    }
+
+    public void Served()
+    {
+        OnMonsterServed?.Invoke();
     }
 
     private void DeliverySucceeded(Monster monster)

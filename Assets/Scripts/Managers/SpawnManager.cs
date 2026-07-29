@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 public class SpawnManager : MonoBehaviour
@@ -9,8 +10,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Monster[] monsters;
 
     [Header("Spawn")]
-    [SerializeField] private float spawnTimerMax = 5f;
-
     [SerializeField] private float spawnPosX = 12f;
 
     [Header("Waiting")]
@@ -40,18 +39,20 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        spawnTimer = 0.5f * spawnTimerMax;
+        spawnTimer = 5f; // First Spawn
     }
 
     private void Update()
     {
+        if (GameManager.Instance.IsGameOver) return;
+
         spawnTimer -= Time.deltaTime;
 
         if (spawnTimer <= 0f)
         {
             TrySpawn();
 
-            spawnTimer = spawnTimerMax;
+            spawnTimer = GameManager.Instance.SpawnInterval;
         }
     }
 
@@ -95,12 +96,18 @@ public class SpawnManager : MonoBehaviour
     {
         int side = monster.Side;
 
-        waitingQueues[side].Remove(monster);
+        if (!waitingQueues[side].Remove(monster)) return;
+
+        StartCoroutine(UpdateQueue(side));
+    }
+
+    private IEnumerator UpdateQueue(int side)
+    {
+        yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < waitingQueues[side].Count; i++)
         {
-            waitingQueues[side][i].SetWaitingPoint(
-                GetWaitingPosition(side, i));
+            waitingQueues[side][i].SetWaitingPoint(GetWaitingPosition(side, i));
         }
     }
 

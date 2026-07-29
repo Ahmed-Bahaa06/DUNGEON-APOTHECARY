@@ -732,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 6900790542697297657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.196, y: 0.68, z: 0}
+  m_LocalPosition: {x: -0.196, y: 0.68, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1155,7 +1155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef0ced2f708d0647b93af115c914a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster
-  patienceTime: 5
   exitPoint: {fileID: 2030877166701212598, guid: 332ee696241c75b4d891d96da9e7f497, type: 3}
 --- !u!114 &8856477015767248820
 MonoBehaviour:
@@ -1259,7 +1258,7 @@ MonoBehaviour:
   radius: 0.25
   height: 2
   canMove: 1
-  maxSpeed: 6
+  maxSpeed: 5
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2

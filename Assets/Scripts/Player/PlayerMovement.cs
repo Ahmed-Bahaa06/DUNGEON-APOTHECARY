@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
     private Rigidbody2D rb;
     private BoxCollider2D box;
+    private bool canMove = true;
 
     private void Awake()
     {
@@ -12,10 +13,22 @@ public class PlayerMovement : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
     }
 
+    private void Start()
+    {
+        GameManager.Instance.OnGameOver += Stop;
+    }
+
+    public void Stop()
+    {
+        canMove = false;
+        rb.linearVelocity = Vector2.zero;
+    }
+
     public void Move(Vector2 moveInput, float moveSpeed)
     {
-        Vector2 moveDir = CalculateMovement(moveInput);
+        if (!canMove) return;
 
+        Vector2 moveDir = CalculateMovement(moveInput);
         rb.linearVelocity = moveDir * moveSpeed;
     }
 
