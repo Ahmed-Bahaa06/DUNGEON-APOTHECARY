@@ -4,6 +4,8 @@ using System;
 
 public class CraftingTable : MonoBehaviour, IInteractable
 {
+    public static CraftingTable Instance { get; private set; }
+
     [SerializeField] private RecipeListSO cureRecipes;
 
     [SerializeField] private GameObject interactionPoint;
@@ -30,6 +32,7 @@ public class CraftingTable : MonoBehaviour, IInteractable
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
         craftingTimer = craftingTimerMax;
     }
 

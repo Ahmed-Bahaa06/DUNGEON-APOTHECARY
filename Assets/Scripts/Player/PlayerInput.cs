@@ -1,9 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-
-
 
 [DefaultExecutionOrder(-100)]
 public class PlayerInput : MonoBehaviour
@@ -15,6 +12,7 @@ public class PlayerInput : MonoBehaviour
     public event Action OnSelectLeftItemAction;
     public event Action OnSelectRightItemAction;
     public event Action OnToggleSlotAction;
+    public event Action OnPauseAction;
 
     private MyInputActions myInput;
 
@@ -37,6 +35,7 @@ public class PlayerInput : MonoBehaviour
         myInput.Player.SelectLeftItem.performed += SelectLeftItem_performed;
         myInput.Player.SelectRightItem.performed += SelectRightItem_performed;
         myInput.Player.Scroll.performed += Scroll_performed;
+        myInput.Player.Pause.performed += Pause_performed;
     }
 
 
@@ -46,7 +45,9 @@ public class PlayerInput : MonoBehaviour
         myInput.Player.Interact.performed -= Interact_performed;
         myInput.Player.Drop.performed -= Drop_performed;
         myInput.Player.SelectLeftItem.performed -= SelectLeftItem_performed;
+        myInput.Player.SelectRightItem.performed -= SelectRightItem_performed;
         myInput.Player.Scroll.performed -= Scroll_performed;
+        myInput.Player.Pause.performed -= Pause_performed;
 
         myInput.Disable();
     }
@@ -56,6 +57,13 @@ public class PlayerInput : MonoBehaviour
         if (obj.ReadValue<float>() != 0)
         {
             OnToggleSlotAction?.Invoke();
+        }
+    }
+    private void Pause_performed(InputAction.CallbackContext obj)
+    {
+        if (obj.performed)
+        {
+            OnPauseAction?.Invoke();
         }
     }
 

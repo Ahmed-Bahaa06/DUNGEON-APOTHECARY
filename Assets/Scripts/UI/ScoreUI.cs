@@ -9,8 +9,6 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private Animator containerAnimator;
     [SerializeField] private Animator addedTextAnimator;
 
-    private float timer = 1f;
-
     private void Awake()
     {
         scoreText.text = "0";
@@ -19,16 +17,12 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
         ScoreManager.Instance.OnScoreChanged += ScoreManager_OnScoreChanged;
+        ScoreManager.Instance.OnMilestoneAchived += ScoreManager_OnMilestoneAchived;
     }
 
-    private void Update()
+    private void ScoreManager_OnMilestoneAchived()
     {
-        timer -= Time.deltaTime;
-
-        if (timer < 0f)
-        {
-            
-        }
+        containerAnimator.SetTrigger("Milestone");
     }
 
     private void ScoreManager_OnScoreChanged()

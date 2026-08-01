@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance {  get; private set; }
+    public static ScoreManager Instance { get; private set; }
 
     public event Action OnScoreChanged;
+    public event Action OnMilestoneAchived;
 
     private int score;
 
     private void Awake()
     {
-        if(Instance == null) Instance = this;
+        if (Instance == null)
+            Instance = this;
     }
 
     private void OnEnable()
@@ -22,6 +24,12 @@ public class ScoreManager : MonoBehaviour
     private void Monster_OnAnyMonsterServed()
     {
         score++;
+
+        if (score % 5 == 0)
+        {
+            OnMilestoneAchived?.Invoke();
+        }
+
         OnScoreChanged?.Invoke();
     }
 
@@ -30,8 +38,21 @@ public class ScoreManager : MonoBehaviour
         return score;
     }
 
+    public int GetHighScore()
+    {
+        return SaveManager.Instance.GetHighScore();
+    }
+
+    public void SaveHighScore()
+    {
+        if (score > SaveManager.Instance.GetHighScore())
+        {
+            SaveManager.Instance.SetHighScore(score);
+        }
+    }
+
     private void OnDisable()
     {
-        Monster.OnMonsterServed += Monster_OnAnyMonsterServed;
+        Monster.OnMonsterServed -= Monster_OnAnyMonsterServed;
     }
 }

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -22,8 +20,12 @@ public class GameManager : MonoBehaviour
     public float MonsterPatience => monsterPatience;
 
     public bool IsGameOver { get; private set; }
+    public bool IsPaused { get; private set; }
 
     public event Action OnGameOver;
+    public event Action OnGamePaused;
+    public event Action OnGameUnpaused;
+
     private int monstersServed;
 
     private void Awake()
@@ -35,6 +37,38 @@ public class GameManager : MonoBehaviour
     {
         Player.Instance.health.OnPlayerDied += PlayerDied;
         Monster.OnMonsterServed += Monster_OnMonsterServed;
+        PlayerInput.Instance.OnPauseAction += PlayerInput_OnPauseAction;
+    }
+
+    private void PlayerInput_OnPauseAction()
+    {
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        if (IsGameOver) return;
+
+        if (IsPaused)
+            ResumeGame();
+        else
+            PauseGame();
+    }
+
+    private void PauseGame()
+    {
+        IsPaused = true;
+        Time.timeScale = 0f;
+
+        OnGamePaused?.Invoke();
+    }
+
+    private void ResumeGame()
+    {
+        IsPaused = false;
+        Time.timeScale = 1f;
+
+        OnGameUnpaused?.Invoke();
     }
 
     private void Monster_OnMonsterServed()
