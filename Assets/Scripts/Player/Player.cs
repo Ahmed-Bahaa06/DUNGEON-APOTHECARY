@@ -65,6 +65,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!movement.CanMove)
+        {
+            visual.UpdateVisual(Vector2.zero);
+            return;
+        }
+
         moveInput = PlayerInput.Instance.GetMovementVectorNormalized();
         visual.UpdateVisual(moveInput);
     }

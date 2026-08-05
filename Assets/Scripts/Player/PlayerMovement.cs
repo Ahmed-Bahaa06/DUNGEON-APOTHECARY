@@ -5,7 +5,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
     private Rigidbody2D rb;
     private BoxCollider2D box;
-    private bool canMove = true;
+
+    private bool canMove;
+    public bool CanMove => canMove;
 
     private void Awake()
     {
@@ -22,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = false;
         rb.linearVelocity = Vector2.zero;
+    }
+
+    public void Resume()
+    {
+        canMove = true;
     }
 
     public void Move(Vector2 moveInput, float moveSpeed)

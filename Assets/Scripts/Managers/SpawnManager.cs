@@ -20,6 +20,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private float waitingOffset = 1f;
 
+    private bool canSpawn;
+
     private const int MaxMonstersPerSide = 3;
     private const int MaxChasingMonsters = 2;
 
@@ -44,16 +46,25 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.IsGameOver) return;
+        if (!canSpawn) return;
 
         spawnTimer -= Time.deltaTime;
-
         if (spawnTimer <= 0f)
         {
             TrySpawn();
-
             spawnTimer = GameManager.Instance.SpawnInterval;
         }
+    }
+
+    public void Resume()
+    {
+        canSpawn = true;
+        spawnTimer = 0.5f * GameManager.Instance.SpawnInterval;
+    }
+
+    public void Stop()
+    {
+        canSpawn = false;
     }
 
     private void TrySpawn()
