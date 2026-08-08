@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Pool;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -30,18 +30,24 @@ public class SpawnManager : MonoBehaviour
         new List<Monster>(),
         new List<Monster>()
     };
+
     private int chasingMonsters;
 
     private float spawnTimer;
 
+    private Dictionary<Monster, ObjectPool<Monster>> monsterPools = new();
+
     private void Awake()
     {
-        if(Instance == null) Instance = this;
+        if (Instance == null)
+            Instance = this;
+
+        CreatePools();
     }
 
     private void Start()
     {
-        spawnTimer = 5f; // First Spawn
+        spawnTimer = 5f;
     }
 
     private void Update()
@@ -49,11 +55,42 @@ public class SpawnManager : MonoBehaviour
         if (!canSpawn) return;
 
         spawnTimer -= Time.deltaTime;
+
         if (spawnTimer <= 0f)
         {
             TrySpawn();
             spawnTimer = GameManager.Instance.SpawnInterval;
         }
+    }
+
+    private void CreatePools()
+    {
+        foreach (Monster monsterPrefab in monsters)
+        {
+            ObjectPool<Monster> pool = new ObjectPool<Monster>(
+                () => CreateMonster(monsterPrefab),
+                monster => monster.gameObject.SetActive(true),
+                monster => monster.gameObject.SetActive(false),
+                monster => Destroy(monster.gameObject),
+                true,
+                2,
+                8
+            );
+
+            // We use the prefab as a temporary key
+            monsterPools.Add(monsterPrefab, pool);
+        }
+    }
+
+    private Monster CreateMonster(Monster monsterPrefab)
+    {
+        Monster monster = Instantiate(monsterPrefab);
+
+        monster.SetPrefab(monsterPrefab);
+
+        monster.gameObject.SetActive(false);
+
+        return monster;
     }
 
     public void Resume()
@@ -72,7 +109,8 @@ public class SpawnManager : MonoBehaviour
         bool leftHasSpace = waitingQueues[0].Count < MaxMonstersPerSide;
         bool rightHasSpace = waitingQueues[1].Count < MaxMonstersPerSide;
 
-        if (!leftHasSpace && !rightHasSpace) return;
+        if (!leftHasSpace && !rightHasSpace)
+            return;
 
         if (leftHasSpace && rightHasSpace)
         {
@@ -80,9 +118,10 @@ public class SpawnManager : MonoBehaviour
             return;
         }
 
-        if (leftHasSpace) Spawn(0);
-
-        else Spawn(1);
+        if (leftHasSpace)
+            Spawn(0);
+        else
+            Spawn(1);
     }
 
     private void Spawn(int side)
@@ -91,23 +130,43 @@ public class SpawnManager : MonoBehaviour
 
         float sign = side == 0 ? -1f : 1f;
 
-        Vector3 spawnPos = new Vector3(sign * spawnPosX, 0f, 0f);
+        Vector3 spawnPos = new Vector3(
+            sign * spawnPosX,
+            0f,
+            0f
+        );
 
-        Monster monster = Instantiate(monsters[idx], spawnPos, Quaternion.identity);
+        Monster monster = monsterPools[monsters[idx]].Get();
+
+        monster.transform.SetPositionAndRotation(
+            spawnPos,
+            Quaternion.identity
+        );
 
         waitingQueues[side].Add(monster);
 
         monster.Initialize(
             GetWaitingPosition(side, waitingQueues[side].Count - 1),
             entrancePoints[side].position,
-            side);
+            side
+        );
+
+        monster.ChangeState(monster.WaitingState);
+    }
+    public void ReleaseMonster(Monster monster)
+    {
+        if (!monsterPools.TryGetValue(monster.Prefab, out ObjectPool<Monster> pool))
+            return;
+
+        pool.Release(monster);
     }
 
     public void MonsterLeftWaiting(Monster monster)
     {
         int side = monster.Side;
 
-        if (!waitingQueues[side].Remove(monster)) return;
+        if (!waitingQueues[side].Remove(monster))
+            return;
 
         StartCoroutine(UpdateQueue(side));
     }
@@ -118,7 +177,9 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < waitingQueues[side].Count; i++)
         {
-            waitingQueues[side][i].SetWaitingPoint(GetWaitingPosition(side, i));
+            waitingQueues[side][i].SetWaitingPoint(
+                GetWaitingPosition(side, i)
+            );
         }
     }
 

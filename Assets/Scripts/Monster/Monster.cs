@@ -27,6 +27,13 @@ public class Monster : MonoBehaviour
     public static event Action OnMonsterServed;
     public event Action OnHealed;
 
+    public Monster Prefab { get; private set; }
+
+    public void SetPrefab(Monster prefab)
+    {
+        Prefab = prefab;
+    }
+
     private void Awake()
     {
         Movement = GetComponent<MonsterMovement>();
@@ -37,11 +44,6 @@ public class Monster : MonoBehaviour
         ChasingState = new MonsterChasingState(this);
         CalmingState = new MonsterCalmingState(this);
         ExitingState = new MonsterExitingState(this);
-    }
-
-    private void Start()
-    {
-        ChangeState(WaitingState);
     }
 
     private void OnEnable()

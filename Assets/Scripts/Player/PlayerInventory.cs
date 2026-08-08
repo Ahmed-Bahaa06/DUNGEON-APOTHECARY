@@ -12,6 +12,7 @@ public class PlayerInventory : MonoBehaviour
     private ItemSO[] slots = new ItemSO[SlotCount];
 
     public event Action OnInventoryChanged;
+    public event Action OnItemAdded;
     private int selectedSlot = 0;
 
 
@@ -67,6 +68,7 @@ public class PlayerInventory : MonoBehaviour
                 slots[i] = item;
                 SelectSlot(i);
 
+                OnItemAdded?.Invoke();
                 OnInventoryChanged?.Invoke();
 
 

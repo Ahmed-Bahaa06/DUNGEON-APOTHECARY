@@ -12,7 +12,7 @@ public class MonsterExitingState : MonsterState
         {
             monster.Movement.Stop();
             monster.Served();
-            Object.Destroy(monster.gameObject);
+            SpawnManager.Instance.ReleaseMonster(monster);
         }
     }
 }

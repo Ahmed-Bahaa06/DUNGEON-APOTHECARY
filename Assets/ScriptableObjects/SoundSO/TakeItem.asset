@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2266463d6d6422489bf8d7b659be30c, type: 3}
   m_Name: TakeItem
   m_EditorClassIdentifier: Assembly-CSharp::SoundSO
-  clip: {fileID: 8300000, guid: dd2485956d7718c4f98509ce15d3ad78, type: 3}
+  clip: {fileID: 8300000, guid: e87a0da3d08799b4192e21252d62ccf3, type: 3}
