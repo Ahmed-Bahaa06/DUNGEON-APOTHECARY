@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FrostRemedy
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSO
   itemName: Frost Remedy
-  sprite: {fileID: 21300000, guid: b31a293df6d407a409a2ce157290015a, type: 3}
+  sprite: {fileID: 21300000, guid: 11ad4163ca9da464badfb9778c7b2eff, type: 3}
   type: 1

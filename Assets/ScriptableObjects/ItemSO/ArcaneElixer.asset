@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ArcaneElixer
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSO
   itemName: Arcane Elixer
-  sprite: {fileID: 21300000, guid: 30cb144af4f6b994a9b712484e7e2301, type: 3}
+  sprite: {fileID: 21300000, guid: 32626c7b976b5124498e712ff2d642dc, type: 3}
   type: 1

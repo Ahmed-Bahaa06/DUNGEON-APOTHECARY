@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
