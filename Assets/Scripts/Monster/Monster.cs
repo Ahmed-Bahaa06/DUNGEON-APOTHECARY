@@ -15,6 +15,8 @@ public class Monster : MonoBehaviour
 
     public MonsterMovement Movement { get; private set; }
     public MonsterRecipe Recipe { get; private set; }
+    private MonsterVisual visual;
+    private MonsterIconVisual iconVisual;
 
     public MonsterWaitingState WaitingState { get; private set; }
     public MonsterAngryState AngryState { get; private set; }
@@ -38,6 +40,8 @@ public class Monster : MonoBehaviour
     {
         Movement = GetComponent<MonsterMovement>();
         Recipe = GetComponent<MonsterRecipe>();
+        visual = GetComponent<MonsterVisual>();
+        iconVisual = GetComponent<MonsterIconVisual>();
 
         WaitingState = new MonsterWaitingState(this);
         AngryState = new MonsterAngryState(this);
@@ -95,6 +99,12 @@ public class Monster : MonoBehaviour
             return;
 
         Heal();
+    }
+
+    public void ResetMonster()
+    {
+        visual.ResetVisual();
+        iconVisual.ResetVisual();
     }
 
     public bool CanReceiveDelivery => currentState.CanReceiveDelivery;

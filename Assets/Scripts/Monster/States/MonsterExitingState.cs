@@ -12,6 +12,7 @@ public class MonsterExitingState : MonsterState
         {
             monster.Movement.Stop();
             monster.Served();
+            SpawnManager.Instance.MonsterLeftWaiting(monster);
             SpawnManager.Instance.ReleaseMonster(monster);
         }
     }

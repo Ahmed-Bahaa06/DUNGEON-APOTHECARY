@@ -75,4 +75,18 @@ public class MonsterVisual : MonoBehaviour
         currentAnimator.SetFloat("LastInputX", lastInputX);
         currentAnimator.SetFloat("LastInputY", lastInputY);
     }
+
+    public void ResetVisual()
+    {
+        InfectedVisual.SetActive(true);
+        healedVisual.SetActive(false);
+
+        currentAnimator = unhealedAnimator;
+
+        lastInputX = 0f;
+        lastInputY = 0f;
+
+        currentAnimator.Rebind();
+        currentAnimator.Update(0f);
+    }
 }

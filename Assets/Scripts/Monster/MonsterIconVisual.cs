@@ -10,9 +10,7 @@ public class MonsterIconVisual : MonoBehaviour
 
     private void Start()
     {
-        cureSprite.sprite = monster.Recipe.RequiredCure.sprite;
-        ingredientOneSprite.sprite = monster.Recipe.RequiredIngredients[0].sprite;
-        ingredientTwoSprite.sprite = monster.Recipe.RequiredIngredients[1].sprite;
+        SetSprite();
     }
 
     private void OnEnable()
@@ -25,8 +23,22 @@ public class MonsterIconVisual : MonoBehaviour
         monster.OnHealed -= Hide;
     }
 
+    public void ResetVisual()
+    {
+        floatingIconContainer.SetActive(true);
+
+        SetSprite();
+    }
+
     private void Hide()
     {
         floatingIconContainer.SetActive(false);
+    }
+
+    public void SetSprite()
+    {
+        cureSprite.sprite = monster.Recipe.RequiredCure.sprite;
+        ingredientOneSprite.sprite = monster.Recipe.RequiredIngredients[0].sprite;
+        ingredientTwoSprite.sprite = monster.Recipe.RequiredIngredients[1].sprite;
     }
 }

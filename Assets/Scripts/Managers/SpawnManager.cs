@@ -69,15 +69,28 @@ public class SpawnManager : MonoBehaviour
         {
             ObjectPool<Monster> pool = new ObjectPool<Monster>(
                 () => CreateMonster(monsterPrefab),
-                monster => monster.gameObject.SetActive(true),
-                monster => monster.gameObject.SetActive(false),
-                monster => Destroy(monster.gameObject),
+
+                monster =>
+                {
+                    monster.gameObject.SetActive(true);
+                },
+
+                monster =>
+                {
+                    monster.ResetMonster();
+                    monster.gameObject.SetActive(false);
+                },
+
+                monster =>
+                {
+                    Destroy(monster.gameObject);
+                },
+
                 true,
-                2,
-                8
+                8,
+                15
             );
 
-            // We use the prefab as a temporary key
             monsterPools.Add(monsterPrefab, pool);
         }
     }
